@@ -159,9 +159,15 @@ The_dog_sat_on_the_log
 
 -- test --
 -- name text.split.join d --
-[% spaced.split(' ').join('_') %]
+[% spaced.split('\s').join('_') %]
 -- expect --
 __The_dog_sat_on_the_log
+
+-- test --
+-- name text.split.join e --
+[% spaced.trim.split(' ').join('_') %]
+-- expect --
+The_dog_sat_on_the_log
 
 -- test --
 -- name text.list --
